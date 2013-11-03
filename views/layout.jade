@@ -1,0 +1,16 @@
+doctype 5
+html(ng-app="main")
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/app.css')
+    block head
+
+  body(ng-controller="MainCtrl as main")
+    block content
+
+  script(src='/vendor/angular/angular.js') 
+  script(src='/vendor/angular/angular-ui-router.js')
+  script(src='/vendor/angular/angular-resource.js')
+  script(src='/javascripts/AppScripts/app.js')
+  block scripts

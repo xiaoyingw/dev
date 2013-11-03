@@ -1,0 +1,17 @@
+div(ng-controller='TodoCtrl as todos')
+    h2 Todo
+    table
+        tbody
+            tr(ng-repeat='todo in todos.todos')
+                td 
+                    input(type='checkbox',ng-model='todo.done')
+                td 
+                    span(ng-bind='todo.description')
+            tr(ng-show='todos.mode=="add"')
+                td 
+                td
+                    input(type='text', ng-model='todos.new.description')
+                td
+                    button.btn.btn-success.btn-xs(ng-click='todos.confirmAddTodo()')  OK
+                    button.btn.btn-default.btn-xs(ng-click='todos.mode="view"') Cancel
+    a(ng-click='todos.addTodo()') Add Todo

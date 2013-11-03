@@ -1,0 +1,17 @@
+extends layout
+
+block head
+
+block content
+    header.navbar.navbar-default.navbar-fixed-top
+        div.container
+            div.navbar-header
+                a.navbar-brand(href="./") Playground
+            nav
+                ul.nav.navbar-nav
+                    li(ng-repeat='page in main.pages', ng-class='{ active: $state.includes(page.state) }')
+                        a(ng-href='{{page.url}}', ng-bind='page.title') 
+    div.container
+        div(ui-view)
+
+block scripts
